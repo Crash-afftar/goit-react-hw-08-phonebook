@@ -13,7 +13,6 @@ export async function postContacts(newContatact) {
   const { data } = await axios.post(`/contacts`, newContatact);
   return data;
 }
-
 export async function deleteContact(contactId) {
   const contact = await axios.delete(`/contacts/${contactId}`);
   return contact;
