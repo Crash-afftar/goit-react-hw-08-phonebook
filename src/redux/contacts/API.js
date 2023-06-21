@@ -9,10 +9,15 @@ export async function fetchContactList(search) {
   return contacts;
 }
 
-export async function postContacts(newContatact) {
-  const { data } = await axios.post(`/contacts`, newContatact);
-  return data;
-}
+export const postContacts = async (newContact) => {
+  try {
+    const { data } = await axios.post('/contacts', newContact);
+    return data;
+  } catch (error) {
+    throw new Error('Oops. Something is wrong. Please try again!');
+  }
+};
+
 export async function deleteContact(contactId) {
   const contact = await axios.delete(`/contacts/${contactId}`);
   return contact;

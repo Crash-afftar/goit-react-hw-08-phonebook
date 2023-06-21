@@ -15,12 +15,12 @@ const ContactList = () => {
         <WarningText>There are currently no contacts in your Phonebook</WarningText>
       )}
 
-      {contacts.map(({ name, phone, id }) => (
+      {contacts.map(({ name, number, id }) => (
         <ListItem key={id}>
-          <span>{`${name}: ${phone}`}</span>
+          <span>{`${name}: ${number}`}</span>
           <ButtonDelete
             type="button"
-            onClick={() => {
+            onClick={() => {  
               dispatch(deleteContacts(id));
             }}
           >
